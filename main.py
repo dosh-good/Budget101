@@ -15,14 +15,15 @@ def main_page():
 
 @app.route("/show", methods=["POST", "GET"])
 def show():
+  amount = 0
   if request.method == "POST":
     amount = request.form['amount']
     account.deposit(int(amount))
+    print(amount)
     #new code alert
     table.thisdict.update({"Salary/Income": amount})
     #end new code alert
   return render_template('main.html', balance=account.balance)
-  
 
 
 app.run(host='0.0.0.0', port=8080)
