@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Budgeting</title>
+<link rel="stylesheet" href="{{url_for('static', filename = 'style.css')}}" />
+</head>
+
+  <body>
+    <div class = 'main'>
+      <h1>Budget101</h1>
+    
+      <div class = "block">
+        <div class="section">
+          <div id="calculator">
+            <img src="https://th.bing.com/th/id/R.0beb612130e9fdcfe71d27cd4859bfa2?rik=SmSu%2bwOIg7nuIw&riu=http%3a%2f%2fpngimg.com%2fuploads%2fpiggy_bank%2fpiggy_bank_PNG60.png&ehk=VsudjZ4bQ9SZS5ScYRvwbY0VPY1b4QYqtLUnWuh9Ju8%3d&risl=&pid=ImgRaw&r=0" alt='piggy bank image from Google'>
+            <h4>Deposit(+) or Withdraw(-) Here</h4> 
+            
+            <form action="show" method="POST">
+            <input type="text" id="amount" name="amount">
+            <br>
+            <br>
+            
+            <h4><label for="category">Choose a category:</label></h4>
+            <br>
+            <select name="category" id="category">
+                <option name="salary/income">Salary/Income</option>
+                <option value="rent/housing expenses">Rent/Housing</option>
+                <option value="car expenses">Car Expenses</option>
+                <option value="food and personal expense">Food/Personal</option>
+              </select>
+            <br>
+            <br>
+              
+            <input type="submit" value="Check Balance" id="go"> 
+            </form>
+            <br>
+            <p>Your current balance is </p>
+            <h4 id="balance"> ${{ balance }} </h4>
+          </div>
+        </div>
+
+        <div class="section">
+          <div id="transactions">         
+            <h4>Transactions</h4>
+            <h6>WIP-Not functional at the moment</h6>
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+              </tr>
+              <tr>
+                <td>Deposit/Withdrawal</td>
+                <td>${{amount}}</td>
+                <td>10.23.2023</td>
+              </tr>
+              <tr>
+                <td>Groceries</td>
+                <td>-$200</td>
+                <td>09.18.2023</td>
+              </tr>
+              <tr>
+                <td>Apple Bottom Jeans</td>
+                <td>-$129.89</td>
+                <td>03.10.2008</td>
+              </tr>
+            </table>
+            <p> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+</html>
+

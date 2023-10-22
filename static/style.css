@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  background-color: #dbe5f5;
+}
+
+.main{
+  color: #038aa5;
+  text-align: center;
+}
+
+.block{
+  display: flex;
+  justify-content: center;
+}
+
+.section{
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 30%;
+  padding: 10px 0px 10px 0px;
+  margin: 0px 10px 0px 10px;
+}
+
+.section > div{
+  overflow: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td{
+  padding: 5px 14px 8px 14px;
+}
+#amount{
+  border-radius: 5px;
+  border-style: double;
+  font-size: 20px;
+}
+
+#go{
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #7abaff;
+  padding: 10px;
+  display: absolute;
+}
+
+#balance{
+  margin:0px;
+  font-size: 100px; 
+}
+
+img{
+  position: static;
+  width: 80%;
+  height: 80%;
+}
