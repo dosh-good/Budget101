@@ -4,6 +4,7 @@ from Repository import Repository
 
 app = Flask('app')
 account = BankAccount(0)  #object
+name = BankAccount.name
 table = Repository  #object
 
 
@@ -15,16 +16,22 @@ def main_page():
 
 @app.route("/show", methods=["POST", "GET"])
 def show():
-  amount = 0
   if request.method == "POST":
     amount = request.form['amount']
     account.deposit(int(amount))
-    print(amount)
     #new code alert
-    table.thisdict.update({"Salary/Income": amount})
+    #This adds the value of amount to object account, then we can call it at return
+    account.get_amount(amount)
+    #Returns transaction type from the drop down menu
+    name = request.form['category']
+    account.get_type(name)
+    print(name)  #print works
     #end new code alert
-  return render_template('main.html', balance=account.balance)
 
+  return render_template('main.html',
+                         balance=account.balance,
+                         name=account.name,
+                         amount=account.amount)
 
 app.run(host='0.0.0.0', port=8080)
 
