@@ -3,16 +3,15 @@ from BankAccount import BankAccount
 from Repository import Repository
 
 app = Flask('app')
-account = BankAccount(0) #object
-table = Repository #object
+account = BankAccount(0)  #object
+table = Repository  #object
 
-#Each app route is a new page
+
+#Each app route is a new page/function
 @app.route('/', methods=["POST", "GET"])  #homepage
 def main_page():
   return render_template('main.html')
 
-
-#returns string of HTML code
 
 @app.route("/show", methods=["POST", "GET"])
 def show():
@@ -23,6 +22,8 @@ def show():
     table.thisdict.update({"Salary/Income": amount})
     #end new code alert
   return render_template('main.html', balance=account.balance)
+  
+
 
 app.run(host='0.0.0.0', port=8080)
 
